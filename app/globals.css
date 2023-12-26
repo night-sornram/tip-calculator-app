@@ -2,26 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@layer base{
+  .u{
+    @apply   bg-custom-200 text-white text-2xl py-2 hover:bg-custom-100 hover:text-custom-200 rounded font-bold ;
+  }
+  .s{
+    @apply  text-2xl py-2 bg-custom-100 text-custom-200 rounded font-bold
+  }
+  .n{
+    @apply  mt-3 focus-within:ring-2 focus-within:ring-custom-100 w-full flex flex-row justify-between rounded-sm  bg-custom-600;
+  }
+  .e{
+    @apply  mt-3 ring-2 ring-red-500 w-full flex flex-row justify-between rounded-sm  bg-custom-600;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body{
+  background-color: hsl(185, 41%, 84%);
 }
